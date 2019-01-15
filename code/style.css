@@ -29,7 +29,7 @@ header h1{
 .section{
     float: left;
     height: auto;
-    width: 200px;
+    width: 300px;
     border: solid 1px;
     margin-right: 10px;
     scroll-behavior: auto;
@@ -45,22 +45,31 @@ header h1{
 .floor:hover,.room:hover{
     background-color: #e3ebf7;
 }
-/*the paragraph that contents the name of the floor*/
+/*the input text that contents the name of the floor/room*/
 .floorname,.roomname{
     display: inline-flex;
+    width: 150px;
+    
 }
+input[type="text"][disabled] {
+    background-color: transparent;
+    color: black;
+ }
 /*the default div in the section*/
 #defaultfloor,#defaultroom{
     pointer-events:none;
+    height: 40px;
+    margin-left: 3px;
 }
 /*only the button of the default div are hidden*/
-#defaultfloor button,#defaultroom button{
+#defaultfloor button,#defaultroom button, #defaultfloor input, #defaultroom input{
     visibility: hidden!important;
 }
 /*the button RENAME and SAVE are used to edit and save the name of the floor/room */
 .section button:not(#addfloor):not(#addroom):not(#removefloor):not(#removeroom){
     height: 30px;
     width: 30px;
+    margin: 5px;
     background-color: transparent;
     border-color: transparent; 
     pointer-events: inherit;
@@ -80,7 +89,8 @@ header h1{
     background-color: transparent;
     border-color: black;
     border-radius: 10%;
-    margin-top: 5px;
+    margin-top: 20px;
+    margin-left: 5px;
    
 }
 #addfloor:hover , #removefloor:hover, #addroom:hover, #removeroom:hover{

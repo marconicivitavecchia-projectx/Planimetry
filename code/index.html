@@ -10,7 +10,7 @@
     <!--TITLE-->
     <title>Dromotix - Devices</title>
 
-    <script src="jquery-3.3.1.min.js"></script>  
+   <script src="jquery-3.3.1.min.js"></script> 
     <script src="app.js"></script>  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
@@ -24,15 +24,18 @@
             document.getElementById('addfloor').onclick = function(){
                 var $original = document.getElementById('defaultfloor');
                 var clone = $original.cloneNode(true);
+                var par =  clone.querySelector('p');
+                par.parentNode.removeChild(par);
                 $(clone).find("button").css("visibility","visible");
-                clone.removeAttribute('id');           
+                clone.removeAttribute('id'); 
                 $original.after(clone); 
             // TO-DO createElement e poi appendChild al div Preview
             
             } 
-       
+            
+            //onclick of the pen icon the user can rename the floor
            $(document).delegate(".renamefloor", 'click', function() {
-                $(this).parents('div.floor').find(".floorname").attr("contenteditable", "true");
+                $(this).parents('div.floor').find(".floorname").removeAttr("disabled");
                 $(this).parents('div.floor').find(".floorname").css("-webkit-appearance", "textfield");
                 $(this).css("pointer-events", "none");
                 $(this).css("color","grey");
@@ -40,8 +43,9 @@
                 $(this).parents('div.floor').find(".savefloor").css("color","");
             });
             
+            //onclick of the pen save the user can save the name of the floor
             $(document).delegate(".savefloor", 'click', function() {
-                $(this).parents('div.floor').find(".floorname").attr("contenteditable", "false");
+                $(this).parents('div.floor').find(".floorname").attr("disabled", "true");
                 $(this).parents('div.floor').find(".floorname").css("-webkit-appearance", "none");
                 $(this).css("pointer-events", "none");
                 $(this).css("color","grey");
@@ -50,7 +54,7 @@
                 $(this).css("color","");
             });
             
-            // onclick REMOVE the usec can select the room to remove
+            // onclick REMOVE the user can select the floor to remove
             $(document).delegate(".floor",'click',function(){
                    if($(this).hasClass('selected')){
                        $(this).removeClass('selected');
@@ -81,7 +85,8 @@
     <div class="section">
         <div id="defaultfloor" class="floor"> 
             <!--name of the floor-->
-            <p class="floorname">Floor</p>
+            <p>Floor</p>
+            <input type="text" maxlength="15" class="floorname" placeholder="Floor" disabled>
             <!--on click of this button with the icon, the user can rename the floor-->
             <button type="button" class="renamefloor">
                 <span><i class="fas fa-pen"></i></span>
