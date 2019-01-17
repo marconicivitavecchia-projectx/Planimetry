@@ -22,16 +22,18 @@
            }
             document.getElementById('addroom').onclick = function(){
                 var $original = document.getElementById('defaultroom');
-                var $clone = $original.cloneNode(true);
-              // TO-DO remove hidden on buttons
-                $clone.removeAttribute('id');           
-                $original.after($clone); 
+                var clone = $original.cloneNode(true);
+                var par =  clone.querySelector('p');
+                par.parentNode.removeChild(par);
+                clone.removeAttribute('id');           
+                $original.after(clone); 
             // TO-DO createElement e poi appendChild al div Preview
             
             } 
-       
+            
+            //onclick of the pen icon the user can rename the room
            $(document).delegate(".renameroom", 'click', function() {
-                $(this).parents('div.room').find(".roomname").attr("contenteditable", "true");
+                $(this).parents('div.room').find(".roomname").removeAttr("disabled");
                 $(this).parents('div.room').find(".roomname").css("-webkit-appearance", "textfield");
                 $(this).css("pointer-events", "none");
                 $(this).css("color","grey");
@@ -39,8 +41,9 @@
                 $(this).parents('div.room').find(".saveroom").css("color","");
             });
             
+            //onclick of the save icon the user can save the name of the room
             $(document).delegate(".saveroom", 'click', function() {
-                $(this).parents('div.room').find(".roomname").attr("contenteditable", "false");
+                $(this).parents('div.room').find(".roomname").attr("disabled", "true");
                 $(this).parents('div.room').find(".roomname").css("-webkit-appearance", "none");
                 $(this).css("pointer-events", "none");
                 $(this).css("color","grey");
@@ -48,7 +51,8 @@
                 $(this).parents('div.room').find(".renameroom").css("color","");
                 $(this).css("color","");
             });
-         
+            
+            //onclick of the arrow icon the user can look for the devices in the room
             $(document).delegate(".devroom", 'click', function() {
                 var div = $(this).parents('div.room').find(".devices");
                 if (div.css('display') === "none") {
@@ -59,7 +63,7 @@
                 
             });
             
-         // onclick REMOVE the usec can select the room to remove
+         // onclick REMOVE the user can select the room to remove
         $(document).delegate(".room",'click',function(){
                if($(this).hasClass('selected')){
                    $(this).removeClass('selected');
@@ -91,7 +95,8 @@
     <div class="section">
         <div id="defaultroom" class="room"> 
             <!--name of the room-->
-            <p class="roomname">Room</p>
+            <p>Room</p>
+            <input type="text" maxlength="15" class="roomname" placeholder="Room" disabled>
             <!--on click of this button with the icon, the user can rename the room-->
             <button type="button" class="renameroom">
                 <span><i class="fas fa-pen"></i></span>
