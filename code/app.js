@@ -23,7 +23,6 @@ init = function(){
          $(this).parents('div.floor').find(".savefloor").css("pointer-events", "auto");
          $(this).parents('div.floor').find(".savefloor").css("color","");
      });
-
      //onclick of the pen save the user can save the name of the floor
      $(document).delegate(".savefloor", 'click', function() {
          $(this).parents('div.floor').find(".floorname").attr("disabled", "true");
@@ -34,7 +33,6 @@ init = function(){
          $(this).parents('div.floor').find(".renamefloor").css("color","");
          $(this).css("color","");
      });
-
      // onclick REMOVE the user can select the floor to remove
      $(document).delegate(".floor",'click',function(){
             if($(this).hasClass('selected')){
@@ -47,6 +45,5 @@ init = function(){
       document.getElementById('removefloor').onclick = function(){
           $(this).parents('div.section').find("div.selected").remove();
       }
-
 }
 $(document).ready(init);
