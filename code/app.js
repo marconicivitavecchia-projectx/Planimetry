@@ -1,8 +1,9 @@
-init = function(){
+app = {
+init : function(){
     document.getElementById('edit').onclick = function(){
         window.location = "edit_floor.html";
     }
-     document.getElementById('addfloor').onclick = function(){
+    document.getElementById('addfloor').onclick = function(){
          var $original = document.getElementById('defaultfloor');
          var clone = $original.cloneNode(true);
          var par =  clone.querySelector('p');
@@ -11,9 +12,9 @@ init = function(){
          clone.removeAttribute('id'); 
          $original.after(clone); 
      // TO-DO createElement e poi appendChild al div Preview
-
+     
      } 
-
+     
      //onclick of the pen icon the user can rename the floor
     $(document).delegate(".renamefloor", 'click', function() {
          $(this).parents('div.floor').find(".floorname").removeAttr("disabled");
@@ -22,9 +23,10 @@ init = function(){
          $(this).css("color","grey");
          $(this).parents('div.floor').find(".savefloor").css("pointer-events", "auto");
          $(this).parents('div.floor').find(".savefloor").css("color","");
-     });
+    });
+     
      //onclick of the pen save the user can save the name of the floor
-     $(document).delegate(".savefloor", 'click', function() {
+    $(document).delegate(".savefloor", 'click', function() {
          $(this).parents('div.floor').find(".floorname").attr("disabled", "true");
          $(this).parents('div.floor').find(".floorname").css("-webkit-appearance", "none");
          $(this).css("pointer-events", "none");
@@ -33,8 +35,9 @@ init = function(){
          $(this).parents('div.floor').find(".renamefloor").css("color","");
          $(this).css("color","");
      });
+     
      // onclick REMOVE the user can select the floor to remove
-     $(document).delegate(".floor",'click',function(){
+    $(document).delegate(".floor",'click',function(){
             if($(this).hasClass('selected')){
                 $(this).removeClass('selected');
             }else{
@@ -42,8 +45,24 @@ init = function(){
                 $(this).addClass('selected');
             }
         });
-      document.getElementById('removefloor').onclick = function(){
+    document.getElementById('removefloor').onclick = function(){
           $(this).parents('div.section').find("div.selected").remove();
-      }
+    }
+    console.log("init inside app!");
+        $("title").text("New title");
+        $.get("data.json")
+        .done(app.onSuccess)
+        .fail(app.onError);
+      
+},
+onSuccess:function(jsonData){
+    // processa i dati qui!!!
+    console.log(jsonData);
+},
+
+onError:function(e){
+    console.log("error!");
+    console.log(JSON.stringify(e));
 }
-$(document).ready(init);
+}
+$(document).ready(app.init);

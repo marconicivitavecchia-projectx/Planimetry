@@ -1,0 +1,5 @@
+{
+    "floorList" : ["Piano Terra", "Primo Piano"],
+    "roomList" : ["Cucina", "Camera da letto", "Bagno", "Salone"],
+    "deviceList" : ["PC", "Portatile", "Smartphone", "Tablet"]
+}
