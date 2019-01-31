@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <!--TITLE-->
+    <title>Dromotix - Devices</title>
+
+   <script src="jquery-3.3.1.min.js"></script> 
+    <script src="app.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<<<<<<< HEAD
+   
+=======
+<<<<<<< HEAD
+   
+=======
+    
+    <script>
+    
+        window.onload = function() {
+        
+           document.getElementById('edit').onclick = function(){
+               window.location = "edit_floor.html";
+           }
+            document.getElementById('addfloor').onclick = function(){
+                var $original = document.getElementById('defaultfloor');
+                var clone = $original.cloneNode(true);
+                var par =  clone.querySelector('p');
+                par.parentNode.removeChild(par);
+                $(clone).find("button").css("visibility","visible");
+                clone.removeAttribute('id'); 
+                $original.after(clone); 
+            // TO-DO createElement e poi appendChild al div Preview
+            
+            } 
+            
+            //onclick of the pen icon the user can rename the floor
+           $(document).delegate(".renamefloor", 'click', function() {
+                $(this).parents('div.floor').find(".floorname").removeAttr("disabled");
+                $(this).parents('div.floor').find(".floorname").css("-webkit-appearance", "textfield");
+                $(this).css("pointer-events", "none");
+                $(this).css("color","grey");
+                $(this).parents('div.floor').find(".savefloor").css("pointer-events", "auto");
+                $(this).parents('div.floor').find(".savefloor").css("color","");
+            });
+            
+            //onclick of the pen save the user can save the name of the floor
+            $(document).delegate(".savefloor", 'click', function() {
+                $(this).parents('div.floor').find(".floorname").attr("disabled", "true");
+                $(this).parents('div.floor').find(".floorname").css("-webkit-appearance", "none");
+                $(this).css("pointer-events", "none");
+                $(this).css("color","grey");
+                $(this).parents('div.floor').find(".renamefloor").css("pointer-events", "auto");
+                $(this).parents('div.floor').find(".renamefloor").css("color","");
+                $(this).css("color","");
+            });
+            
+            // onclick REMOVE the user can select the floor to remove
+            $(document).delegate(".floor",'click',function(){
+                   if($(this).hasClass('selected')){
+                       $(this).removeClass('selected');
+                   }else{
+                       $(this).parents('div.section').find("div.selected").removeClass('selected');
+                       $(this).addClass('selected');
+                   }
+               });
+             document.getElementById('removefloor').onclick = function(){
+                 $(this).parents('div.section').find("div.selected").remove();
+             }
+        
+        
+        }
+    
+    
+    </script>
+    
+    
+>>>>>>> 1df342c8b96920facf0c08993b383d4c41273354
+>>>>>>> 7aea9c2c75276c52cbd7f8ca841db9ef86b42660
+</head>
+<body>
+    <header>
+        <h1><b>Mapping and management of devices</b></h1>
+        <!-- TO-DO on click of this button the page with the selected floor in preview will be opened-->
+        <button id="edit"><b>Edit</b></button>
+    </header>
+
+    <div class="section">
+        <div id="defaultfloor" class="floor"> 
+            <!--name of the floor-->
+            <p>Floor</p>
+            <input type="text" maxlength="15" class="floorname" placeholder="Floor" disabled>
+            <!--on click of this button with the icon, the user can rename the floor-->
+            <button type="button" class="renamefloor">
+                <span><i class="fas fa-pen"></i></span>
+            </button>
+            <!--on click of this button with the icon, the user can save the floor's name-->
+            <button type="button" class="savefloor" style="pointer-events: none">
+                <span><i class="fas fa-save"></i></span>
+            </button>
+        </div>
+        
+        <div>
+            <!--on click of this button the default floor will be cloned-->
+            <button id="addfloor">Add</button>
+            <!-- TO-DO on click of this button the user can select the floor he wants to remove-->
+            <button id="removefloor">Remove</button>
+        </div>
+        
+    </div>
+    <div class="container">
+        <h3>Preview</h3>
+        <div>
+            <!-- TO-DO in this div there will be shown all the previews of the floors with their devices-->
+            <div class="preview">
+                <div id="defaultpreview"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
