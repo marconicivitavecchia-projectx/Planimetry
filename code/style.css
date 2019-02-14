@@ -13,7 +13,7 @@ header h1{
 
 /*the EDIT button is to edit a floor and his devices*/
 #edit,#save,#cancel {
-    margin-left: 20%;
+    margin-left: 5%;
     background-color: transparent;
     border-color: black;
     border-radius: 15%;
@@ -42,9 +42,7 @@ header h1{
     padding-left: 5px;
     
 }
-.floor:hover,.room:hover{
-    background-color: #e3ebf7;
-}
+
 /*the input text that contents the name of the floor/room*/
 .floorname,.roomname{
     display: inline-flex;

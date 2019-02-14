@@ -1,5 +1,6 @@
-.devices{
-    display: none;
-    text-decoration-color: black;
-    border: black!important;
+#devices{
+    list-style-type: none;
+}
+.aside{
+    align-self:  right;
 }

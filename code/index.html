@@ -55,14 +55,14 @@
             });
             
             // onclick REMOVE the user can select the floor to remove
-            $(document).delegate(".floor",'click',function(){
-                   if($(this).hasClass('selected')){
-                       $(this).removeClass('selected');
-                   }else{
-                       $(this).parents('div.section').find("div.selected").removeClass('selected');
-                       $(this).addClass('selected');
-                   }
-               });
+        $(document).delegate(".floor",'click',function(){
+               if($(this).hasClass('selected')){
+                   $(this).removeClass('selected');
+               }else{
+                   $(this).parents('div.section').find("div.selected").removeClass('selected');
+                   $(this).addClass('selected');
+               }
+           });
              document.getElementById('removefloor').onclick = function(){
                  $(this).parents('div.section').find("div.selected").remove();
              }
