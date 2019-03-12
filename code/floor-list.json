@@ -1,0 +1,13 @@
+{
+    "floorList" : [
+        {
+            "name": "Piano Terra",
+            "devices": ["light"]
+        },
+        {
+            "name": "Secondo Piano ",
+            "devices": ["pc"]
+        }
+    ]
+    
+}

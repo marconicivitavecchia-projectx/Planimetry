@@ -99,8 +99,13 @@ input[type="text"][disabled] {
 .container{
     display: flex;
     justify-content: center;
-
+    
+    
 }
 .container h3{
-   
+    clear: both;
+}
+.preview{
+    
+    
 }

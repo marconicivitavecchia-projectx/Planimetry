@@ -78,7 +78,48 @@
         
         }
     
-    
+        //DRAG AND DROP
+        //Inizializzo l'oggetto da Spostare
+        oggetto = null;
+        
+        //Le due variabili che archiviano la posizione cursore mouse
+        mouse_x = 0;
+        mouse_y = 0;
+        
+        //Le due variabili che archiviano la posizione dell'elemento
+        ele_x = 0;
+        ele_y = 0;
+        
+        //Collega le due funzioni muovi e ferma
+        function inizializzaMov(){
+        document.onmousemove = muovi;
+        document.onmouseup = ferma;
+        }
+        
+        //Distrugge l'oggetto quando siamo fermi
+        function ferma(){
+        oggetto = null;
+        }
+        
+        //Funzione principale, che è responsabile dello spostamento dell'elemento
+        function muovi(e){
+        mouse_x = document.all ? window.event.clientX : e.pageX;
+        mouse_y = document.all ? window.event.clientY : e.pageY;
+        if(oggetto != null)
+        {
+        oggetto.style.left = (mouse_x - ele_x) + "px";
+        oggetto.style.top = (mouse_y - ele_y) + "px";
+        }
+        }
+        
+        //Viene richiamata quando comincio a spostare l'oggetto
+        function muoviOggetto(ele){
+        //memorizzo i valori dell'elemento che deve essere spostato
+        oggetto = ele;
+        ele_x = mouse_x - oggetto.offsetLeft;
+        ele_y = mouse_y - oggetto.offsetTop;
+        
+        }
     </script>
     
     
@@ -133,21 +174,21 @@
                 <ul>
                     <li>
                         <p>Light</p>
-                        <button type="button" class="light">
+                        <div  class="dev light" draggable="true" onclick="inizializzaMov();" onmousedown="muoviOggetto(this);">
                             <span><i class="fas fa-lightbulb"></i></span>
-                        </button>
+                        </div>
                     </li>
                     <li>
                         <p>Tv</p>
-                        <button type="button" class="tv">
-                            <span><i class="fas fa-lightbulb"></i></span>
-                        </button>
+                        <div  class="dev tv" draggable="true" onclick="inizializzaMov();" onmousedown="muoviOggetto(this);">
+                            <span><i class="fas fa-tv"></i></span>
+                        </div>
                     </li>
                     <li>
                         <p>Pc</p>
-                        <button type="button" class="pc">
-                            <span><i class="fas fa-lightbulb"></i></span>
-                        </button>
+                        <div  class="dev pc" draggable="true" onclick="inizializzaMov();" onmousedown="muoviOggetto(this);">
+                            <span><i class="fas fa-laptop"></i></i></span>
+                        </div>
                     </li>
     
                 </ul> 
