@@ -1,13 +1,46 @@
 {
-    "floorList" : [
+    "groundFloorList": [
         {
-            "name": "Piano Terra",
-            "devices": ["light"]
+            "roomName": "Living Room",
+            "devices": [
+                "Light", "TV", "Laptop"
+            ]
         },
         {
-            "name": "Secondo Piano ",
-            "devices": ["pc"]
+            "roomName": "Kitchen",
+            "devices": [
+                "Mixer", "Microwave", "Fridge" ,"Light"
+            ]
+        },
+        {
+            "roomName": "Hall",
+            "devices": ["Light"]
+        }
+    ],
+    "firstFloorList": [
+        {
+            "roomName": "Kid Room",
+            "divices": [
+                "TV", "PC", "Light", "Digital Clock"  
+            ]
+        },
+        {
+            "roomName": "Parents Room",
+            "divices": [
+                "Light", "TV", "Laptop"
+            ]
+        },
+        {
+            "roomName": "Guest Room",
+            "divices": [
+                "TV", "Light", "Digital Clock"  
+            ]
+        },
+        {
+            "roomName": "Bath Room",
+            "divices": [
+                "Light", "Washing Machine", "Toothbrush"
+            ]
         }
     ]
-    
 }
