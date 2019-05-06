@@ -1,46 +1,38 @@
 {
     "groundFloorList": [
-        {
-            "roomName": "Living Room",
-            "devices": [
-                "Light", "TV", "Laptop"
-            ]
-        },
-        {
-            "roomName": "Kitchen",
-            "devices": [
-                "Mixer", "Microwave", "Fridge" ,"Light"
-            ]
-        },
-        {
-            "roomName": "Hall",
-            "devices": ["Light"]
-        }
     ],
     "firstFloorList": [
         {
             "roomName": "Kid Room",
             "divices": [
-                "TV", "PC", "Light", "Digital Clock"  
+                "TV","Light" 
             ]
         },
         {
             "roomName": "Parents Room",
             "divices": [
-                "Light", "TV", "Laptop"
+                "Light", "TV"
             ]
         },
         {
             "roomName": "Guest Room",
             "divices": [
-                "TV", "Light", "Digital Clock"  
+                "TV", "Light"
             ]
         },
         {
-            "roomName": "Bath Room",
+            "roomName": "Big Bath Room",
             "divices": [
-                "Light", "Washing Machine", "Toothbrush"
+                "Light"
+            ]
+        },
+        {
+            "roomName": "Small Bath Room",
+            "divices": [
+                "Light"
             ]
         }
+    ],
+    "secondFloorList": [
     ]
 }
