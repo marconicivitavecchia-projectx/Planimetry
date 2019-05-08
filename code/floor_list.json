@@ -4,31 +4,36 @@
     "firstFloorList": [
         {
             "roomName": "Kid Room",
-            "divices": [
-                "TV","Light" 
+            "plan": "",
+            "devices": [
+                "TV","Light"
             ]
         },
         {
             "roomName": "Parents Room",
-            "divices": [
-                "Light", "TV"
+            "plan":"../images/bedroom.jpg",
+            "devices": [
+                "../images/light_on.PNG", "TV"
             ]
         },
         {
             "roomName": "Guest Room",
-            "divices": [
+            "plan": "",
+            "devices": [
                 "TV", "Light"
             ]
         },
         {
             "roomName": "Big Bath Room",
-            "divices": [
+            "plan": "",
+            "devices": [
                 "Light"
             ]
         },
         {
             "roomName": "Small Bath Room",
-            "divices": [
+            "plan": "",
+            "devices": [
                 "Light"
             ]
         }
