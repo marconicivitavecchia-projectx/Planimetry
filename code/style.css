@@ -7,8 +7,9 @@ header {
     display: flex;
     justify-content: center;
 }
-header h1{
-   
+
+#edit{
+    font-weight: bold;
 }
 
 /*the EDIT button is to edit a floor and his devices*/
