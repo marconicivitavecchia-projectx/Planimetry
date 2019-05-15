@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    
+    <!--bootstrap link-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <!--link to css style-->
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="editing_style.css">
+    <link rel="stylesheet" href="style.css">
+    
     
     <!--TITLE-->
     <title>Dromotix - Devices on the floor</title>
     <!--jquery libraries-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="appRoom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
      window.onload = function() {
         
@@ -26,7 +31,7 @@
                 var par =  clone.querySelector('p');
                 par.parentNode.removeChild(par);
                 clone.removeAttribute('id');           
-                $original.after(clone); 
+                $('#rooms').append(clone);
             // TO-DO createElement e poi appendChild al div Preview
             
             } 
@@ -127,12 +132,13 @@
 <body>
     <header>
         <h1><b>Management of devices on the floor</b></h1>
-        <!-- TO-DO on click of this button the structure of the piano will be saved-->
-        <button id="save"><b>Save changes</b></button>
         <!-- TO-DO on click of this button the changes of the piano will be discarded-->
-        <button id="cancel"><b>Discard changes</b></button>
+        <button type="button" class="btn btn-light" id="cancel">cancel</button>
+        <!-- TO-DO on click of this button the structure of the piano will be saved-->
+        <button type="button" class="btn btn-light" id="save">Save</button>
+        
     </header>
-
+    <div class="corp">
     <div class="section">
         <div id="defaultroom" class="room"> 
             <!--name of the room-->
@@ -140,61 +146,37 @@
             <input type="text" maxlength="15" class="roomname" placeholder="Room" disabled>
             <!--on click of this button with the icon, the user can rename the room-->
             <button type="button" class="renameroom">
-                <span><i class="fas fa-pen"></i></span>
+                <span><img src="../images/icons/icon_edit.svg"></span>
             </button>
             <!--on click of this button with the icon, the user can save the room's name-->
             <button type="button" class="saveroom" style="pointer-events: none">
-                <span><i class="fas fa-save"></i></span>
+                <span><img src="../images/icons/icon_save.svg"></span>
             </button>
             
         </div>
-        
-        <div id="buttons">
+        <div id="rooms">
+      
+        </div>
+        <div class="buttons">
             <!--on click of this button the default room will be cloned-->
-            <button id="addroom">Add</button>
+            <button type="button" class="btn btn-light" id="addroom">Add</button>
             <!-- TO-DO on click of this button the user can select the room he wants to remove-->
-            <button id="removeroom">Remove</button>
+            <button type="button" class="btn btn-light" id="removeroom">Remove</button>
         </div>
         
     </div>
     
     <div class="container">
-        <h3>Preview</h3>
-        <div>
-            <!-- TO-DO in this div there will be shown the preview of the room with its devices in each room-->
-            <div class="preview">
-                <div id="defaultpreview"></div>
-            </div>
+        <h3>Floor plans</h3>
+        <div id="previews">
+          <!-- TO-DO in this div there will be shown all the previews of the floors with their devices-->
+       
+            
         </div>
-    </div>
-
-    <div class="aside">
-            <div id="devices" class=""> 
-                <!--list of the device-->
-                <ul>
-                    <li>
-                        <p>Light</p>
-                        <div  class="dev light" draggable="true" onclick="inizializzaMov();" onmousedown="muoviOggetto(this);">
-                            <span><i class="fas fa-lightbulb"></i></span>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Tv</p>
-                        <div  class="dev tv" draggable="true" onclick="inizializzaMov();" onmousedown="muoviOggetto(this);">
-                            <span><i class="fas fa-tv"></i></span>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Pc</p>
-                        <div  class="dev pc" draggable="true" onclick="inizializzaMov();" onmousedown="muoviOggetto(this);">
-                            <span><i class="fas fa-laptop"></i></i></span>
-                        </div>
-                    </li>
+     </div>
+</div>
     
-                </ul> 
-                    
-            </div>
-                
-        </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

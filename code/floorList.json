@@ -1,0 +1,73 @@
+{
+    "floorList":[
+        {
+            "name": "Ground floor",
+            "plan" :"../images/ground_floor.png",
+            "rooms": [
+                {
+                    "roomName": "Living room",
+                    "plan": "../images/living_room.png",
+                    "devices": [
+                        "TV","Light"
+                    ]
+                },
+                {
+                    "roomName": "Dining room",
+                    "plan": "../images/dining_room.png",
+                    "devices": [
+                        "Light"
+                    ]
+                },
+                {
+                    "roomName": "Guest room",
+                    "plan": "../images/guest_room.png",
+                    "devices": [
+                    
+                    ]
+                },
+                {
+                    "roomName": "Garage",
+                    "plan": "../images/garage.png",
+                    "devices": [
+                        
+                    ]
+                }
+                ,
+                {
+                    "roomName": "Gaming room",
+                    "plan": "../images/gaming_room.png",
+                    "devices": [
+                        "pc","Light","TV"
+                    ]
+                }
+            ]
+        },
+        {
+            "name":"First floor",
+            "plan" :"../images/first_floor.png",
+            "rooms": [
+                {
+                    "roomName": "Parents room",
+                    "plan": "../images/master_room.png",
+                    "devices": [
+                        "TV","Light"
+                    ]
+                },
+                {
+                    "roomName": "Kids room",
+                    "plan":"../images/kids_room.png",
+                    "devices": [
+                        "../images/light_on.PNG", "TV"
+                    ]
+                },
+                {
+                    "roomName": "Bath room",
+                    "plan": "../images/bath_room.png",
+                    "devices": [
+                        "Light"
+                    ]
+                }
+            ]
+        }
+    ]
+}

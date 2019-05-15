@@ -4,37 +4,53 @@ body{
 
 /*the HEADER contains the title and the button edit*/
 header {
-    display: flex;
+    
     justify-content: center;
 }
 header h1{
-   
+   float: left;
+
 }
 
-/*the EDIT button is to edit a floor and his devices*/
-#edit,#save,#cancel {
-    margin-left: 5%;
-    background-color: transparent;
-    border-color: black;
-    border-radius: 15%;
-    height: 10%;
-    align-self: center;
+.btn-light{
+    border: black solid 1px !important;
+}
+#edit{
+    margin: 10px;
+    float: right;
+}
+
+.corp{
+    clear: both;
+    display: flex;
     
 }
-#edit:hover,#save:hover,#cancel:hover{
-    background-color: rgb(197, 197, 197);
+/*the div with class CONTAINER contains the preview of all the rooms with the icons of the devices in them*/
+.container{
+    margin-left: 2%;
+    border: 1px solid;
+    width: 70%;
+    height: auto;
+    text-align: center;
+    margin-top: 15px;
+    
+}
+
+.preview{
+    scroll-behavior: auto;
+    
 }
 
 /*the div with class section is a list of the floors that the user can add or remove*/
 .section{
-    float: left;
+    margin-top: 15px;
     height: auto;
-    width: 300px;
+    width: 25%;
     border: solid 1px;
-    margin-right: 10px;
     scroll-behavior: auto;
     padding: 10px;
-    margin-top:65px;
+    margin-right: 2%;
+    
 }
 
 /*all div in the section*/
@@ -95,17 +111,16 @@ input[type="text"][disabled] {
     background-color: rgb(197, 197, 197);
 }
 
-/*the div with class CONTAINER contains the preview of all the rooms with the icons of the devices in them*/
-.container{
-    display: flex;
-    justify-content: center;
-    
-    
+.prevfloor{
+    margin: 10px;
 }
-.container h3{
-    clear: both;
+
+
+input[type="file"]{
+    display: none;
+    z-index: -1;
 }
-.preview{
-    
-    
+.box label img{
+    width: 30px;
+    height: 30px;
 }

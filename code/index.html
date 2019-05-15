@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <!--bootstrap link-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -13,7 +13,7 @@
 
 
   <script src="jquery-3.3.1.min.js"></script>
-
+  <script src="appFloor.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
@@ -31,7 +31,7 @@
       par.parentNode.removeChild(par);
       $(clone).find("button").css("visibility","visible");
       clone.removeAttribute('id');
-      $original.after(clone);
+      $('#floors').append(clone);
       // TO-DO createElement e poi appendChild al div Preview
 
     }
@@ -81,9 +81,9 @@
   <header>
     <h1><b>Mapping and management of devices</b></h1>
     <!-- TO-DO on click of this button the page with the selected floor in preview will be opened-->
-    <button id="edit"><b>Edit</b></button>
+    <button type="button" class="btn btn-light" id="edit">Edit floor</button>
   </header>
-
+<div class="corp">
   <div class="section">
     <div id="defaultfloor" class="floor">
       <!--name of the floor-->
@@ -91,31 +91,36 @@
       <input type="text" maxlength="15" class="floorname" placeholder="Floor" disabled>
       <!--on click of this button with the icon, the user can rename the floor-->
       <button type="button" class="renamefloor">
-        <span><i class="fas fa-pen"></i></span>
+        <span><img src="../images/icons/icon_edit.svg"></span>
       </button>
       <!--on click of this button with the icon, the user can save the floor's name-->
       <button type="button" class="savefloor" style="pointer-events: none">
-        <span><i class="fas fa-save"></i></span>
+        <span><img src="../images/icons/icon_save.svg"></span>
       </button>
     </div>
-
-    <div>
+    <div id="floors">
+      
+    </div>
+    <div class="buttons">
       <!--on click of this button the default floor will be cloned-->
-      <button id="addfloor">Add</button>
+      <button type="button" class="btn btn-light" id="addfloor">Add</button>
       <!-- TO-DO on click of this button the user can select the floor he wants to remove-->
-      <button id="removefloor">Remove</button>
+      <button type="button" class="btn btn-light" id="removefloor">Remove</button>
     </div>
 
   </div>
   <div class="container">
-    <h3>Preview</h3>
+    <h3>Floor plans</h3>
     <div id="previews">
       <!-- TO-DO in this div there will be shown all the previews of the floors with their devices-->
-
+   
+        
+    </div>
     </div>
   </div>
+</div>
 
-<script src="app.js"></script>
 
-  </body>
+<!--bootstrap link-->
+ </body>
 </html>
