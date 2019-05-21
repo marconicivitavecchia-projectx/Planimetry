@@ -14,3 +14,5 @@ Instead of the "Edit" button there are 2 more buttons.
 The first "Save" to save the various changes shown in the map.
 The second "Cancel" to cancel the changes made.
 Both will lead to the previous page.
+
+![Edit page](Screenshot_editpage.PNG)
