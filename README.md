@@ -15,4 +15,5 @@ The first "Save" to save the various changes shown in the map.
 The second "Cancel" to cancel the changes made.
 Both will lead to the previous page.
 
+![Main page](Screenshot_mainpage.PNG)
 ![Edit page](Screenshot_editpage.PNG)
