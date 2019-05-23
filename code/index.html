@@ -47,15 +47,9 @@
     });
 
     //onclick of the pen save the user can save the name of the floor
-    $(document).delegate(".savefloor", 'click', function() {
-      $(this).parents('div.floor').find(".floorname").attr("disabled", "true");
-      $(this).parents('div.floor').find(".floorname").css("-webkit-appearance", "none");
-      $(this).css("pointer-events", "none");
-      $(this).css("color","grey");
-      $(this).parents('div.floor').find(".renamefloor").css("pointer-events", "auto");
-      $(this).parents('div.floor').find(".renamefloor").css("color","");
-      $(this).css("color","");
-    });
+    // $(document).delegate(".savefloor", 'click', function() {
+      
+    // });
 
     // onclick REMOVE the user can select the floor to remove
     $(document).delegate(".floor",'click',function(){

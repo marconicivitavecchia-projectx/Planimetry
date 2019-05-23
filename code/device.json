@@ -1,0 +1,80 @@
+{
+    "devices": [
+        {
+            "relax": [
+                {
+                    "id": "relax1",
+                    "name": "TV"
+                },
+                {
+                    "id": "ilum1",
+                    "name": "Light"
+                },
+                {
+                    "id": "gameing1",
+                    "name": "Console"
+                },
+                {
+                    "id": "gameing2",
+                    "name": "PC"
+                },
+                {
+                    "id": "music1",
+                    "name": "Stereo"
+                },
+                {
+                    "id": "gameing3",
+                    "name": "Smartphone"
+                },
+                {
+                    "id": "gameing4",
+                    "name": "Tablet"
+                }
+            ],
+            "kitchen": [
+                {
+                    "id": "kitdiv1",
+                    "name": "Oven"
+                },
+                {
+                    "id": "kitdiv2",
+                    "name": "Dishwasher"
+                },
+                {
+                    "id": "kitdiv3",
+                    "name": "Friger"
+                },
+                {
+                    "id": "kitdiv4",
+                    "name": "Mixer"
+                }
+            ],
+            "bath": [
+                {
+                    "id": "bath1",
+                    "name": "Washing Machine"
+                },
+                {
+                    "id": "bath2",
+                    "name": "Brush"
+                },
+                {
+                    "id": "bath3",
+                    "name": "Shaver"
+                },
+                {
+                    "id": "bath4",
+                    "name": "Dryer"
+                },
+                {
+                    "id": "bath5",
+                    "name": "Iron"
+                },
+                {
+                    "id": "bath6",
+                    "name": "Water Heater"
+                }
+            ]
+        }
+    ]
+}

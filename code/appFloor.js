@@ -1,10 +1,38 @@
 var app = {
 	init: function () {
 		console.log("init");
-		$.getJSON("floorList.json")
+		$.getJSON("https://projectx-marconi.firebaseio.com/planimetry.json")
 			.done(app.onSuccess)
 			.fail(app.onError);
+			$(document).delegate(".savefloor", 'click', app.rename);
 	},
+	rename: function () {
+		var name = $(this).parents('div.floor').find('input:text.floorname').val();
+		var number = $(this).parents('div.floor').index();
+		console.log(name);
+		console.log(number);
+		let changeData = JSON.stringify(name);
+		console.log(changeData);
+		$.ajax({
+			type: "PUT",
+			url: `https://projectx-marconi.firebaseio.com/planimetry/floorList/${number}/name.json`,
+			data: changeData,
+			contentType: "application/json",
+		}).done(app.onRenameSuccess)
+			.fail(app.onError);
+		$(this).parents('div.floor').find('input.floorname').val(name);
+		$(this).parents('div.floor').find("input.floorname").attr("disabled", "true");
+		$(this).parents('div.floor').find("input.floorname").css("-webkit-appearance", "none");
+		$(this).css("pointer-events", "none");
+		$(this).css("color","grey");
+		$(this).parents('div.floor').find("button.renamefloor").css("pointer-events", "auto");
+		$(this).parents('div.floor').find("button.renamefloor").css("color","");
+		$(this).css("color","");
+	},
+	onRenameSuccess: function (name) {
+		console.log(`onRenameSuccess: ${name}`)
+	},
+
 	onSuccess: function (jsonData) {
 		console.log(jsonData);
 		let list = jsonData.floorList;
